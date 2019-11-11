@@ -1,0 +1,94 @@
+<!--
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        rel="stylesheet"
+        id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+</head>
+
+<body class="bodytag">
+<div class="container">
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class=" offset-md-4 col-md-5 ">
+      <div class="card card-signin my-5 ">
+        <div class="card-body">
+          <hr>
+          <h4 class="card-title">Transaction Details of {{ loggeduser }}</h4>
+          <form [formGroup]="Form">
+            <div class="form-group">
+              <input type="text" formControlName="email" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+              <input type="text" formControlName="password" class="form-control" disabled />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Transaction Details of {{loggeduser}}</h2>
+</div>
+<div class="container" *ngIf="result != null && result.length > 0"  >
+  <div class="card bg-light text-dark">
+    <div class="card-body">
+      <div class="container" >
+        <div class="table-responsive">
+          <table class="col-xs-6 table table-bordered table-hover table-striped mb-0" cellspacing="0">
+            <thead>
+            <tr style="background: lightblue">
+              <th>Name</th>
+              <th>account Id</th>
+              <th>transaction Id</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of result">
+              <td>
+                {{ item.fname }}
+              </td>
+              <td>
+                {{ item.accountId }}
+              </td>
+              <td>
+                {{ item.TransactionId }}
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

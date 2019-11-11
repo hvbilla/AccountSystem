@@ -1,0 +1,58 @@
+@mixin sidebar-background-color($background-color, $font-color){
+    .nav{
+        .nav-item{
+            .nav-link{
+              color: darkorange;
+            }
+            i{
+              color: rgba(darkorange, .8);
+            }
+
+            &.active,
+            &:hover{
+                [data-toggle="collapse"]{
+                  color: darkorange;
+                    i{
+                        color: rgba(darkorange, .8);
+                    }
+                }
+            }
+        }
+    }
+    .user{
+        a{
+          color: darkorange;
+        }
+    }
+    .simple-text{
+        color: darkorange;
+    }
+    .sidebar-background:after{
+        background: darkorange;
+        opacity: .8;
+    }
+}
+
+@mixin sidebar-active-color($font-color){
+    .nav{
+      .nav-item{
+            &.active > a:not([data-toggle="collapse"]){
+                color: darkorange;
+                opacity: 1;
+                @include shadow-big-color($font-color);
+
+                i{
+                    color: rgba(darkorange, .8);
+                }
+            }
+        }
+    }
+}
+
+@mixin set-background-color-button($color){
+
+    li.active > a{
+        background-color: darkorange;
+        @include shadow-big-color(darkorange);
+    }
+}
